@@ -34,25 +34,25 @@ class _MainBounceTabBarState extends State<MainBounceTabBar> {
       ),
       floatingActionButton: FloatingActionButton(onPressed: null),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: TestingAppBar(),
-      // bottomNavigationBar: BounceTabTar(
-      //   backgroundColor: Colors.blue,
-      //   onTabChanged: (value) {
-      //     print(value);
-      //     setState(() {
-      //       _currentIndex = value;
-      //     });
-      //   },
-      //   items: [
-      //     Icon(
-      //       Icons.person,
-      //       color: Colors.white,
-      //     ),
-      //     Icon(Icons.print, color: Colors.white),
-      //     Icon(Icons.speaker, color: Colors.white),
-      //     Icon(Icons.note, color: Colors.white),
-      //   ],
-      // ),
+      // bottomNavigationBar: TestingAppBar(),
+      bottomNavigationBar: BounceTabTar(
+        backgroundColor: Colors.blue,
+        onTabChanged: (value) {
+          print(value);
+          setState(() {
+            _currentIndex = value;
+          });
+        },
+        items: [
+          Icon(
+            Icons.person,
+            color: Colors.white,
+          ),
+          Icon(Icons.print, color: Colors.white),
+          Icon(Icons.speaker, color: Colors.white),
+          Icon(Icons.note, color: Colors.white),
+        ],
+      ),
     );
   }
 }
@@ -63,7 +63,7 @@ class TestingAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-          child: Container(
+      child: Container(
         child: CustomPaint(
           size: Size(double.infinity, 70),
           painter: RPSCustomPainter(),
